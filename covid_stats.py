@@ -1,3 +1,4 @@
+
 # -*- coding: utf-8 -*-
 """
 Created on Sat Mar 14 16:19:02 2020
@@ -11,6 +12,8 @@ from datetime import timedelta
 import csv
 import urllib
 from collections import OrderedDict
+import matplotlib
+matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 import matplotlib.dates as mdates
 import math
@@ -122,3 +125,5 @@ ax.xaxis.set_minor_formatter(mdates.DateFormatter("%d-%m"))
 generatedOn = plt.text(xmin+(xmax-xmin)*0.01,ymax+(ymax-ymin)*0.005, 
                       'Genrated on: '+datetime.now().strftime("%Y-%m-%d %H:%M"),ha='left', va='baseline', fontsize=8, color='black')
 
+
+plt.savefig('covid_stats_latest.png', dpi=300)
